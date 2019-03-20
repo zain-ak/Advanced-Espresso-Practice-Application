@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
   <EditText
-      android:id="@+id/name"
+      android:id="@+id/edit_name"
       android:layout_width="0dp"
       android:layout_height="wrap_content"
       android:layout_margin="4dp"
@@ -28,7 +28,7 @@
       app:layout_constraintEnd_toStartOf="@+id/button_famous"
       app:layout_constraintHorizontal_bias="0.5"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/name"/>
+      app:layout_constraintTop_toBottomOf="@id/edit_name"/>
 
   <Button
       android:id="@+id/button_famous"
@@ -40,7 +40,7 @@
       app:layout_constraintEnd_toStartOf="@+id/button_punny"
       app:layout_constraintHorizontal_bias="0.5"
       app:layout_constraintStart_toEndOf="@+id/button_popular"
-      app:layout_constraintTop_toBottomOf="@id/name"/>
+      app:layout_constraintTop_toBottomOf="@id/edit_name"/>
 
   <Button
       android:id="@+id/button_punny"
@@ -52,6 +52,6 @@
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.5"
       app:layout_constraintStart_toEndOf="@+id/button_famous"
-      app:layout_constraintTop_toBottomOf="@id/name"/>
+      app:layout_constraintTop_toBottomOf="@id/edit_name"/>
 
 </android.support.constraint.ConstraintLayout>

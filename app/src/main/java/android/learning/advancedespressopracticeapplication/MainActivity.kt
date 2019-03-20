@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
-    nameView = findViewById(R.id.name)
+    nameView = findViewById(R.id.edit_name)
   }
 
   fun goToIdeaActivity(v: View) {

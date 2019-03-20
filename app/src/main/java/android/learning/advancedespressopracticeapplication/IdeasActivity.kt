@@ -24,7 +24,7 @@ class IdeasActivity : AppCompatActivity() {
     if (theme == null) {
       themeView.setText(R.string.missing_theme)
       return
-    }
+    } //this code is only being used for the Espresso Test, you wouldn't encounter the situation in practice.
 
     themeView.text = theme
 

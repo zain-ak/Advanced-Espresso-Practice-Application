@@ -1,6 +1,7 @@
 package android.learning.advancedespressopracticeapplication
 
 import android.content.Intent
+import android.support.test.InstrumentationRegistry
 import android.support.test.espresso.Espresso.onView
 import android.support.test.espresso.assertion.ViewAssertions.matches
 import android.support.test.espresso.matcher.ViewMatchers.withId
@@ -29,31 +30,34 @@ class IdeasActivityTest {
 
     @Test
     fun punny() {
+        val context = InstrumentationRegistry.getTargetContext() //You need context for using string resources
         val intent = Intent()
         intent.putExtra(IdeasActivity.KEY_THEME, "Punny")
         activityRule.launchActivity(intent)
         onView(withId(R.id.theme))
-            .check(matches(withText(R.string.theme_punny)))
+            .check(matches(withText(context.getString(R.string.theme_punny))))
 
     }
 
     @Test
     fun popular() {
+        val context = InstrumentationRegistry.getTargetContext()
         val intent = Intent()
         intent.putExtra(IdeasActivity.KEY_THEME, "Popular")
         activityRule.launchActivity(intent)
         onView(withId(R.id.theme))
-            .check(matches(withText(R.string.theme_popular)))
+            .check(matches(withText(context.getString(R.string.theme_popular))))
 
     }
 
     @Test
     fun famous() {
+        val context = InstrumentationRegistry.getTargetContext()
         val intent = Intent()
         intent.putExtra(IdeasActivity.KEY_THEME, "Famous")
         activityRule.launchActivity(intent)
         onView(withId(R.id.theme))
-            .check(matches(withText(R.string.theme_famous)))
+            .check(matches(withText(context.getString(R.string.theme_famous))))
 
     }
 

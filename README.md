@@ -11,9 +11,11 @@ When working with intents in test, `ActivityTestRule` changes, it'll now take in
 
 With the initialization changed for `ActivityTestRule`, you'll now have to explicity call the activity before you can start performing tests on it. This will be done using the `ActivityTestRule.launchActivity()` method.
 
-Before you do this, you can now create an intent in the test function, and add data to it like you would in a normal activty with the code ```java
+Before you do this, you can now create an intent in the test function, and add data to it like you would in a normal activty with the code:
+```java
 val intent = Intent()
 intent.putExtra(_data_)
 ```
 
-
+ - If you're going to be using string resources like the project is using, you'll need to add a context using `val context = InstrumentationRegistry.getTargetContext()`. 
+ \* Check the difference between `getContext()` and `getTargetContext()`.

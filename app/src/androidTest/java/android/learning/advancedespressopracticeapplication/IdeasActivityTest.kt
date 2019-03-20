@@ -61,5 +61,20 @@ class IdeasActivityTest {
 
     }
 
+    @Test
+    fun unknown() {
+        val context = InstrumentationRegistry.getTargetContext()
+        val intent = Intent()
+        val theme = "wrongHehe"
+
+        intent.putExtra(IdeasActivity.KEY_THEME, theme)
+        activityRule.launchActivity(intent)
+
+        // theme will be added into placeholder of unknown_theme
+        val message = context.getString(R.string.unknown_theme, theme)
+        onView(withId(R.id.theme))
+            .check(matches(withText(message)))
+
+    }
 
 }

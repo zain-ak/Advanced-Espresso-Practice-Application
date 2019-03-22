@@ -102,7 +102,7 @@ Intents.intended(hasExtra(IdeasActivity.KEY_THEME, theme))
 ```
 
 Set a break point on the `return true` line, in the method `matchesSafely()` like below:
-<img src="images/break.png"/>
+<img src="images/break.png" width=300 height =75/>
 
 Now, you'll run run the test in **debug** mode and intercept the intent that is being returned.
 

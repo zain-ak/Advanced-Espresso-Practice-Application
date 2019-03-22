@@ -47,14 +47,14 @@ class MainActivityTest {
         val context = InstrumentationRegistry.getTargetContext()
         val theme = context.getString(R.string.theme_punny)
         Intents.intended(hasExtra(IdeasActivity.KEY_THEME, theme))
-//        Intents.intended(
-//            hasComponent(
-//                ComponentNameMatchers
-//                    .hasClassName("android.learning.advancedespressopracticeapplication.IdeasActivity")
-//            )
-//        )
+        Intents.intended(
+            hasComponent(
+                ComponentNameMatchers
+                    .hasClassName("android.learning.advancedespressopracticeapplication.IdeasActivity")
+            )
+        )
 
-        Intents.intended(anyIntent())
+//        Intents.intended(anyIntent())
     }
 
     fun anyIntent(): Matcher<Intent> {

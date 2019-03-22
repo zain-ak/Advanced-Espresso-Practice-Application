@@ -76,7 +76,11 @@ The first thing to note is that `IntentsTestRule` from espresso-intents is used 
   var activityTestRule = IntentsTestRule(MainActivity::class.java)
 ```
 
-Once this is done, you can get working with the espresso-intents library. The method `punnyIntended()` below implements a basic usage of the library below:
+Once this is done, you can get working with the espresso-intents library. 
+
+<h4>Intent Matching</h4>
+
+The method `punnyIntended()` below implements a basic usage of the library's intent matching features below:
 
 ```java
 @Test
@@ -121,6 +125,36 @@ Intents.intended(
 ```
 As seen in the gif above, you know that the method being called is `hasComponent`, and so you implement it here and check that it's opening the correct class, `IdeasActivity`, on activity change.
  
+<h4>Intent Stubbing</h4> 
+
+With intent stubbing, you can create an intent in the test method and check against this if the return value for `startActivityForResult()` is correct. The method `punnyIntending()` shows a basic functionality of stubbing below:
+
+```java
+@Test
+fun punnyIntending() {
+    val name = "Catalie Portman"
+
+    //Creating an intent that returns the correct result in val result for the test function to confirm with
+    val intent = Intent()
+    intent.putExtra(IdeasActivity.KEY_NAME, name)
+    val result = Instrumentation.ActivityResult(Activity.RESULT_OK, intent)
+
+    //Creating a context as usual and proceeding to use intending() and comparing the return with result above
+    val context = InstrumentationRegistry.getTargetContext()
+    val theme = context.getString(R.string.theme_punny)
+    Intents.intending(hasExtra(IdeasActivity.KEY_THEME, theme)).respondWith(result)
+
+    onView(withId(R.id.button_punny))
+        .perform(click())
+    onView(withId(R.id.edit_name))
+        .check(matches(withText(name)))
+
+}
+```
+With stubbing, the only additional work you're doing is creating a result with the correct output, and swapping the `intended()` method with `intending()`. You also chain on the method `respondWith()`, which'll compare the output of the method with it's parameter, *result* in this case.
+
+
+
 \* [UI Automator](https://developer.android.com/training/testing/ui-automator) is a testing framework for running UI tests when your app goes into other applications after user input... check it out.
 
 Full code from where snippets were taken can be accessed [here](app/src/androidTest/java/android/learning/advancedespressopracticeapplication/MainActivityTest.kt)

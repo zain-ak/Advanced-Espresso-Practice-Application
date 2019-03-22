@@ -9,7 +9,7 @@ _Note:_ There are two packages in folder for testing, once is for unit testing (
 
 ###Incoming Intents
 
-When working with intents in test, `ActivityTestRule` changes, it'll now take in three parameters:
+When working with intents in Espresso, `ActivityTestRule` changes, it'll now take in three parameters:
  - _The class_ that was being used previously, this stays the same;
  - `touchMode`, essentially indicates whether the last interaction performed was with the touch screen. This will be set to _true_;
  - `launchActivity`, this is set to _false_ here because the activity is now not the default one as it was previously. Now you're going to be passing in an intent.
@@ -17,7 +17,7 @@ When working with intents in test, `ActivityTestRule` changes, it'll now take in
 With the initialization changed for `ActivityTestRule`, you'll now have to explicity call the activity before you can start performing tests on it. This will be done using the `ActivityTestRule.launchActivity()` method.
 
 Before you do this, you can now create an intent in the test function, and add data to it like you would in a normal activty with the code:
-```java
+```kotlin
 val intent = Intent()
 intent.putExtra(_data_)
 ```
@@ -30,4 +30,6 @@ intent.putExtra(_data_)
 
 \* [UI Automator](https://developer.android.com/training/testing/ui-automator) is a testing framework for running UI tests when your app goes into other applications after user input... check it out.
 
-\* The espresso-intents [library]([https://goo.gl/8okA8f](https://developer.android.com/training/testing/espresso/intents)) is an extension of espresso for validating and stubbing intents
+\* The espresso-intents [library]([https://goo.gl/8okA8f](https://developer.android.com/training/testing/espresso/intents)) is an extension of espresso for validating and stubbing intents.
+
+

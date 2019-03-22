@@ -43,9 +43,9 @@ activityRule.launchActivity(intent)
 
 Full code from where snippets were taken can be accessed [here](app/src/androidTest/java/android/learning/advancedespressopracticeapplication/IdeasActivityTest.kt)
 
+<h3>Outgoing Intents</h3>
 
 
- ###Outgoing Intents
 
 \* [UI Automator](https://developer.android.com/training/testing/ui-automator) is a testing framework for running UI tests when your app goes into other applications after user input... check it out.
 

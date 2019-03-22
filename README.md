@@ -29,16 +29,18 @@ With the initialization changed for `ActivityTestRule`, you'll now have to expli
 //When calling an empty intent
 activityRule.launchActivity(null) 
 ```
-<br>
- - Usually, you'll first create the intent, and add some data to it, then call launchActivity(). 
- - If you're going to be using resources, for example the project is using string resources, you'll need to add a context. Check the first line below.
+
+- Usually, you'll first create the intent, and add some data to it, then call launchActivity(). 
+- If you're going to be using resources, for example the project is using string resources, you'll need to add a context. Check the first line below:
+  
 ```java
 val context = InstrumentationRegistry.getTargetContext()
 val intent = Intent()
 intent.putExtra(IdeasActivity.KEY_THEME, "Punny")
 activityRule.launchActivity(intent)
 ```
- \**Note:* You'll use `getTargetContext()` while working with test files. It can be thought of as the equivalent to `getContext()`, which is used in production code. 
+<br>
+ \* *Note:* You'll use `getTargetContext()` while working with test files. It can be thought of as the equivalent to `getContext()`, which is used in production code. 
 
 Full code from where snippets were taken can be accessed [here](app/src/androidTest/java/android/learning/advancedespressopracticeapplication/IdeasActivityTest.kt)
 

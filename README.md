@@ -19,7 +19,7 @@ With the initialization changed for `ActivityTestRule`, you'll now have to expli
 Before you do this, you can now create an intent in the test function, and add data to it like you would in a normal activty with the code:
 ```kotlin
 val intent = Intent()
-intent.putExtra(_data_)
+intent.putExtra(*data*)
 ```
 
  - If you're going to be using string resources like the project is using, you'll need to add a context using `val context = InstrumentationRegistry.getTargetContext()`. <br>
@@ -30,6 +30,4 @@ intent.putExtra(_data_)
 
 \* [UI Automator](https://developer.android.com/training/testing/ui-automator) is a testing framework for running UI tests when your app goes into other applications after user input... check it out.
 
-\* The espresso-intents [library]([https://goo.gl/8okA8f](https://developer.android.com/training/testing/espresso/intents)) is an extension of espresso for validating and stubbing intents.
-
-
+\* The espresso-intents [library](https://developer.android.com/training/testing/espresso/intents) is an extension of espresso for validating and stubbing intents.

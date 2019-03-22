@@ -61,6 +61,9 @@ class IdeasActivityTest {
 
     }
 
+    /*Tests for an unknown intent. The test method sends a wrong intent name purposely and is implemented
+    * to pass when the app responds appropriately. You'll see the app display the wrong intent name, but
+    * you're likely to miss it if you're running it on a real device as it runs almost instantly. */
     @Test
     fun unknown() {
         val context = InstrumentationRegistry.getTargetContext()

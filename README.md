@@ -39,10 +39,11 @@ val intent = Intent()
 intent.putExtra(IdeasActivity.KEY_THEME, "Punny")
 activityRule.launchActivity(intent)
 ```
-<br>
- \* *Note:* You'll use `getTargetContext()` while working with test files. It can be thought of as the equivalent to `getContext()`, which is used in production code. 
+ \**Note:* You'll use `getTargetContext()` while working with test files. It can be thought of as the equivalent to `getContext()`, which is used in production code. 
 
 Full code from where snippets were taken can be accessed [here](app/src/androidTest/java/android/learning/advancedespressopracticeapplication/IdeasActivityTest.kt)
+
+
 
  ###Outgoing Intents
 

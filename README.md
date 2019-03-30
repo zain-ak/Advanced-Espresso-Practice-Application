@@ -5,7 +5,7 @@ A Kotlin-based Android Application for learning some of the more advanced concep
    - Incoming Intents
    - Outgoing Intents
   
-The second application, *name*, can be accessed [here](). *name* covers hermetic test environments (Dependency Injections, Dagger).
+The second application, *Dependency Injection Time 🕐*, can be accessed [here](https://github.com/zain-ak/Hermetic-Test-Application). *Dependency Injection Time 🕐* covers hermetic test environments (Dependency Injections, Mockito, Dagger).
 <br>
 _General Note:_ There are two packages in folder for testing, once is for unit testing (**test**) and one is for instrumentation testing (**androidTest**). Instrumentation testing is UI testing so that's what Espresso testing falls under. Create all test files under the *androidTest* package.
 
